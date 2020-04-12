@@ -17,15 +17,12 @@ video: Chapter 2 - Part 3
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ void
+ int
+ float
+ double
+ bool
+ char 
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration function.
     give each declaration an initial value
@@ -65,10 +62,27 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int a = -1;
+    int amount = 10;
+    int position = 0;    
+
+    float time = 12.15f;
+    float height = 78.45f;
+    float mass = 0.05f;
+
+    double distance = 102349821039;
+    double capacitance = 0.0000000001;
+    double population = 10000000000;
+
+    bool status = true;
+    bool completed = false;
+    bool verified = true;
+
+    char letter = 'x';
+    char firstInitial = 'W';
+    char questionMark = '?';
     
-    
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, a, amount, position, time, height, mass, distance, capacitance, population, status, completed, verified, letter, firstInitial, questionMark); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -83,42 +97,79 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int countBpm(int beats, int time = 1)
+{
+    ignoreUnused(beats, time);
+    return(beats);
+}
 /*
  2)
  */
-
+void triggerPulse(float startTime = 0, float duration = 0.5f)
+{
+    ignoreUnused(startTime, duration);
+}
 /*
  3)
  */
-
+void drawButton(int positionX, int positionY, int size = 10)
+{
+    ignoreUnused(positionX, positionY, size);
+}
 /*
  4)
  */
-
+bool powerOn()
+{
+    return(true);
+}
 /*
  5)
  */
-
+char playNote(char note, int octave, float noteDuration = 0.5f)
+{
+    ignoreUnused(note, octave, noteDuration);
+    return(note);
+}
 /*
  6)
  */
-
+void testSpeaker(char typeOfNoise = 'w', int noiseDuration =5)
+{
+    ignoreUnused(typeOfNoise, noiseDuration);
+}
 /*
  7)
  */
-
+bool saveProject(char projectName ='d', int numberOfFiles = 1)
+{
+    ignoreUnused(projectName, numberOfFiles);
+    return(true);
+}
 /*
  8)
  */
-
+auto setGain(float level = -18, int channels = 2)
+{
+    ignoreUnused(level, channels);
+    return(level);
+}
 /*
  9)
  */
-
+bool playChord(char note1, char note2, char note3, int chordDuration = 1)
+{
+    ignoreUnused(note1, note2, note3, chordDuration);
+    return(true);
+}
 /*
  10)
  */
+float calculateTimeDelay(float bpm, float timeInMs = 60000.0f)
+{
+    ignoreUnused(bpm, timeInMs);
+    return(timeInMs/bpm);
+}
 
 int main()
 {
@@ -126,27 +177,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    int songBpm = countBpm(120);   
     //2)
-    
+    triggerPulse(5, 1.5);
     //3)
-    
+    drawButton(150, 90);
     //4)
-    
+    auto powerOnResult = powerOn();
     //5)
-    
+    char notePlayed = playNote('c', 3, 8);
     //6)
-    
+    testSpeaker();
     //7)
-    
+    auto projectSaved = saveProject('h', 1);
     //8)
-    
+    auto currentGain = setGain(-24, 1);
     //9)
-    
+    bool newChordPlayed = playChord('c', 'e', 'g');
     //10)
+    float songTimeDelay = calculateTimeDelay(120);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, songBpm, powerOnResult, notePlayed, projectSaved, currentGain, newChordPlayed, songTimeDelay);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
