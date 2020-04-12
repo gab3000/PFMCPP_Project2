@@ -100,7 +100,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 int countBpm(int beats, int time = 1)
 {
     ignoreUnused(beats, time);
-    return(beats);
+    return beats;
 }
 /*
  2)
@@ -121,7 +121,7 @@ void drawButton(int positionX, int positionY, int size = 10)
  */
 bool powerOn()
 {
-    return(true);
+    return true;
 }
 /*
  5)
@@ -129,7 +129,7 @@ bool powerOn()
 char playNote(char note, int octave, float noteDuration = 0.5f)
 {
     ignoreUnused(note, octave, noteDuration);
-    return(note);
+    return note;
 }
 /*
  6)
@@ -144,7 +144,7 @@ void testSpeaker(char typeOfNoise = 'w', int noiseDuration =5)
 bool saveProject(char projectName ='d', int numberOfFiles = 1)
 {
     ignoreUnused(projectName, numberOfFiles);
-    return(true);
+    return true;
 }
 /*
  8)
@@ -152,7 +152,7 @@ bool saveProject(char projectName ='d', int numberOfFiles = 1)
 auto setGain(float level = -18, int channels = 2)
 {
     ignoreUnused(level, channels);
-    return(level);
+    return level;
 }
 /*
  9)
@@ -160,7 +160,7 @@ auto setGain(float level = -18, int channels = 2)
 bool playChord(char note1, char note2, char note3, int chordDuration = 1)
 {
     ignoreUnused(note1, note2, note3, chordDuration);
-    return(true);
+    return true;
 }
 /*
  10)
@@ -168,7 +168,7 @@ bool playChord(char note1, char note2, char note3, int chordDuration = 1)
 float calculateTimeDelay(float bpm, float timeInMs = 60000.0f)
 {
     ignoreUnused(bpm, timeInMs);
-    return(timeInMs/bpm);
+    return timeInMs/bpm;
 }
 
 int main()
